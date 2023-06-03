@@ -1,3 +1,4 @@
+import { dangerColor, infoColor, primaryColor, warningColor } from "../../nextjs-material-kit";
 import { defaultFont } from "/styles/jss/nextjs-material-kit.js";
 
 import tooltip from "/styles/jss/nextjs-material-kit/tooltipsStyle.js";
@@ -47,7 +48,7 @@ const headerLinksStyle = (theme) => ({
     lineHeight: "20px",
     textDecoration: "none",
     margin: "0px",
-    marginRight: "2px",
+    marginLeft: "5px",
     display: "inline-flex",
     "&:hover,&:focus": {
       color: "inherit",
@@ -114,10 +115,29 @@ const headerLinksStyle = (theme) => ({
     color: 'blue',
     marginRight: "5px",
   },
-  socialButtonBlue: {
+  socialButtonInfo: {
     borderRadius: '30px',
-    color: 'blue',
-    border: '2px solid blue'
+    color: `${infoColor} !important`,
+    border: `2px solid ${infoColor}`,
+    "&:hover": {
+      border: `3px solid ${infoColor}`,
+    },
+  },
+  socialButtonDanger: {
+    borderRadius: '30px',
+    color: `${dangerColor} !important`,
+    border: `2px solid ${dangerColor}`,
+    "&:hover": {
+      border: `3px solid ${dangerColor}`,
+    },
+  },
+  socialButtonWarning: {
+    borderRadius: '30px',
+    color: `${warningColor} !important`,
+    border: `2px solid ${warningColor}`,
+    "&:hover": {
+      border: `3px solid ${warningColor}`,
+    },
   },
   dropdownLink: {
     "&,&:hover,&:focus": {

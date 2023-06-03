@@ -35,6 +35,13 @@ const basicsStyle = {
     height: "17px",
     color: "#FFFFFF"
   },
+  menuList: {
+    
+  },
+  menuListSm: {
+    display: "flex",
+    flexWrap: "wrap"
+  },
   menuItemText: {
     color: primaryColor
   },

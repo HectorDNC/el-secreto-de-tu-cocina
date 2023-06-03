@@ -37,7 +37,7 @@ export default function SectionArticulos() {
             <Grid item xs={12} md={4}>
               <Card>
                 <CardContent>
-                  <MenuList className={classNames.menuListSm}>
+                  <MenuList style={{display: screenSmall ?  "flex" : "block", flexWrap: "wrap"}}>
                     <MenuItem onClick={() => setCategoria(null)}>
                       <Typography variant="inherit" className={categoria === null ? classes.menuItemTextSelected : classes.menuItemText}>
                         Todos

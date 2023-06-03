@@ -29,23 +29,6 @@ export default function HeaderLinks(props) {
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <Tooltip
-          id="instagram-twitter"
-          title="Follow us on twitter"
-          placement={"top"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            href="https://twitter.com/CreativeTim?ref=creativetim"
-            target="_blank"
-            color="transparent"
-            className={classNames(classes.navLink)}
-          >
-            <i className={classes.socialIcons + " fab fa-twitter"} />
-          </Button>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
           id="instagram-facebook"
           title="Follow us on facebook"
           placement={"top"}
@@ -55,7 +38,7 @@ export default function HeaderLinks(props) {
             color="transparent"
             href="https://www.facebook.com/CreativeTim?ref=creativetim"
             target="_blank"
-            className={classes.navLink}
+            className={classNames(classes.navLink, classes.socialButtonInfo)}
           >
             <i className={classes.socialIcons + " fab fa-facebook"} />
           </Button>
@@ -72,9 +55,26 @@ export default function HeaderLinks(props) {
             color="transparent"
             href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
             target="_blank"
-            className={classes.navLink}
+            className={classNames(classes.navLink, classes.socialButtonDanger)}
           >
             <i className={classes.socialIcons + " fab fa-instagram"} />
+          </Button>
+        </Tooltip>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Tooltip
+          id="instagram-twitter"
+          title="Follow us on twitter"
+          placement={"top"}
+          classes={{ tooltip: classes.tooltip }}
+        >
+          <Button
+            href="https://twitter.com/CreativeTim?ref=creativetim"
+            target="_blank"
+            color="transparent"
+            className={classNames(classes.navLink, classes.socialButtonWarning)}
+          >
+            <i className={classes.socialIcons + " fab fa-twitter"} />
           </Button>
         </Tooltip>
       </ListItem>
