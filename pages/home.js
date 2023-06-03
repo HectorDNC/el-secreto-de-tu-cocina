@@ -16,6 +16,7 @@ import Button from "/components/CustomButtons/Button.js";
 import Parallax from "/components/Parallax/Parallax.js";
 // sections for this page
 import SectionBasics from "/pages-sections/Home-Sections/SectionBasics.js";
+import SectionArticulos from "/pages-sections/Home-Sections/SectionArticulos.js";
 import SectionTypography from "/pages-sections/Home-Sections/SectionTypography.js";
 
 import styles from "/styles/jss/nextjs-material-kit/pages/components.js";
@@ -54,8 +55,8 @@ export default function Components(props) {
       </Parallax>
 
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <SectionBasics />
-        <SectionTypography />
+        <SectionArticulos />
+        {/* <SectionBasics /> */}
       </div>
       <Footer />
     </div>
