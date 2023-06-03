@@ -39,16 +39,24 @@ export default function SectionArticulos() {
                 <CardContent>
                   <MenuList className={classNames.menuListSm}>
                     <MenuItem onClick={() => setCategoria(null)}>
-                      <Typography variant="inherit" className={classes.menuItemText}>Todos</Typography>
+                      <Typography variant="inherit" className={categoria === null ? classes.menuItemTextSelected : classes.menuItemText}>
+                        Todos
+                      </Typography>
                     </MenuItem>
                     <MenuItem onClick={() => setCategoria('Productos')}>
-                      <Typography variant="inherit" className={classes.menuItemText}>Productos</Typography>
+                      <Typography variant="inherit" className={categoria == "Productos" ? classes.menuItemTextSelected : classes.menuItemText}>
+                        Productos
+                      </Typography>
                     </MenuItem>
                     <MenuItem onClick={() => setCategoria('Recetas')}>
-                      <Typography variant="inherit" className={classes.menuItemText}>Recetas</Typography>
+                      <Typography variant="inherit" className={categoria == "Recetas" ? classes.menuItemTextSelected : classes.menuItemText}>
+                        Recetas
+                      </Typography>
                     </MenuItem>
                     <MenuItem onClick={() => setCategoria('Consejos')}>
-                      <Typography variant="inherit" className={classes.menuItemText}>Consejos</Typography>
+                      <Typography variant="inherit" className={categoria == "Consejos" ? classes.menuItemTextSelected : classes.menuItemText}>
+                        Consejos
+                      </Typography>
                     </MenuItem>
                   </MenuList>
                 </CardContent>

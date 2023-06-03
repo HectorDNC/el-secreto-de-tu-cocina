@@ -38,6 +38,9 @@ const basicsStyle = {
   menuItemText: {
     color: primaryColor
   },
+  menuItemTextSelected: {
+    color: warningColor
+  },
   cardArticulo: {
     height: "100%"
   },
