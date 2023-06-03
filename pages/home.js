@@ -15,12 +15,12 @@ import GridItem from "/components/Grid/GridItem.js";
 import Button from "/components/CustomButtons/Button.js";
 import Parallax from "/components/Parallax/Parallax.js";
 // sections for this page
-import SectionBasics from "/pages-sections/Home-Sections/SectionBasics.js";
 import SectionArticulos from "/pages-sections/Home-Sections/SectionArticulos.js";
 import SectionTypography from "/pages-sections/Home-Sections/SectionTypography.js";
 
 import styles from "/styles/jss/nextjs-material-kit/pages/components.js";
 import { Grid } from "@material-ui/core";
+import SectionContacto from "../pages-sections/Home-Sections/SectionContacto";
 
 const useStyles = makeStyles(styles);
 
@@ -56,6 +56,7 @@ export default function Components(props) {
 
       <div className={classNames(classes.main, classes.mainRaised)}>
         <SectionArticulos />
+        <SectionContacto />
         {/* <SectionBasics /> */}
       </div>
       <Footer />

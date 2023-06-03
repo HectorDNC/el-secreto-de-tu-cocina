@@ -38,6 +38,7 @@
     "react-dom": ">=16.0.0",
     "react-slick": "0.29.0",
     "sass": "1.54.4",
+    "simple-react-validator": "^1.6.2",
     "styled-components": "5.3.5",
     "webpack": "^5.85.0"
   },

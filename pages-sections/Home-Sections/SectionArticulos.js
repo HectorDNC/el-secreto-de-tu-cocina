@@ -21,7 +21,6 @@ export default function SectionArticulos() {
   const [categoria, setCategoria] = useState(null);
 
   useEffect(() => {
-    console.log(categoria)
     fetchArticulos(categoria, (data) => {
       setArticulos(data);
     });
@@ -31,9 +30,9 @@ export default function SectionArticulos() {
     <Box className={classes.sections}>
       <Container className={classes.container}>
         <Box className={classNames(classes.title, classes.titleBackground)}>
-          <h2>Nuestros Articulos </h2>
+          <h2><b>Nuestros Artículos</b></h2>
         </Box>
-        <Box my={1}>
+        <Box my={2} mt={5}>
           <Grid container spacing={1}>
             <Grid item xs={12} md={4}>
               <Card>

@@ -1,4 +1,4 @@
-import { primaryColor } from "../../../nextjs-material-kit";
+import { infoColor, primaryColor, warningColor } from "../../../nextjs-material-kit";
 import { container, title } from "/styles/jss/nextjs-material-kit.js";
 import customCheckboxRadioSwitch from "/styles/jss/nextjs-material-kit/customCheckboxRadioSwitch.js";
 
@@ -42,13 +42,38 @@ const basicsStyle = {
     height: "100%"
   },
   cardHeaderImage: {
-    display:"flex",
+    display: "flex",
     justifyContent: "center",
     alingItems: "center",
     "& img": {
       width: "100%",
-      height: "150px",
-    } 
+      height: "200px",
+    }
+  },
+  sectionContacto: {
+    marginTop: "3rem"
+  },
+  justifyContentCenter: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  justifyContentEnd: {
+    display: "flex",
+    justifyContent: "end",
+  },
+  textField: {
+    '& input': {
+      border: '2px solid transparent',
+      borderRadius: '4px !important',
+      '&:hover': {
+        border: `2px solid ${infoColor} !important`,
+        zIndex: "10"
+      },
+      '&:focus': {
+        border: `2px solid ${warningColor} !important`,
+        zIndex: "10"
+      },
+    }
   },
   ...customCheckboxRadioSwitch
 };
