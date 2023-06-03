@@ -85,7 +85,8 @@ const card = {
 };
 
 const defaultFont = {
-  fontFamily: '"Caveat", "OpenSans", "Roboto", "Arial", sans-serif',
+  fontFamily: '"Caveat", "Roboto", "Arial", sans-serif',
+  fontFamilySecondary: '"Open Sans", "Roboto", "Arial", sans-serif',
   fontWeight: "300",
   lineHeight: "1.5em",
 };

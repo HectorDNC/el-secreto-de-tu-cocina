@@ -1,4 +1,4 @@
-import { grayColor, infoColor, primaryColor, warningColor } from "../../../nextjs-material-kit";
+import { defaultFont, grayColor, infoColor, primaryColor, warningColor } from "../../../nextjs-material-kit";
 import { container, title } from "/styles/jss/nextjs-material-kit.js";
 import customCheckboxRadioSwitch from "/styles/jss/nextjs-material-kit/customCheckboxRadioSwitch.js";
 
@@ -34,6 +34,16 @@ const basicsStyle = {
     width: "17px",
     height: "17px",
     color: "#FFFFFF"
+  },
+  titleArticulo: {
+    fontFamily: defaultFont.fontFamilySecondary,
+    fontWeight: "bold",
+    fontSize: "1.1rem"
+  },
+  contentArticulo: {
+    fontFamily: defaultFont.fontFamilySecondary,
+    fontWeight: "light",
+    fontSize: "0.9rem"
   },
   menuList: {
     
