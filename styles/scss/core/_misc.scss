@@ -2,9 +2,12 @@ html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+$primaryColor: #24272a;
+$grayColor: #3f454a;
 body {
   font-size: 1rem;
   font-family: "Open Sans", "Roboto", "Arial", sans-serif;
+  color: $primaryColor;
 }
 h1,
 h2,
@@ -15,6 +18,7 @@ h6 {
   font-family: "Caveat", "Roboto", "Arial", sans-serif;
   font-weight: 300;
   line-height: 1.5em;
+  color: $grayColor;
 }
 h1,
 h2,
