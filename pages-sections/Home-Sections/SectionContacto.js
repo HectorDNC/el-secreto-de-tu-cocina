@@ -11,6 +11,7 @@ import classNames from "classnames";
 import CustomInput from "/components/CustomInput/CustomInput.js";
 import Button from "/components/CustomButtons/Button.js";
 import { SimpleReactValidator } from '../../config/validatorConfig.js';
+import { postContacto } from "../../actions/contacto.js";
 
 const useStyles = makeStyles(styles);
 
@@ -25,6 +26,7 @@ export default function SectionContacto() {
   const classes = useStyles();
   const theme = useTheme();
   const [visitante, setVisitante] = useState({});
+  const [submitDisabled, setSubmitDisabled] = useState(false);
   const [, forceUpdate] = useState();
   const initValidator = new SimpleReactValidator({
     autoForceUpdate: { forceUpdate },
@@ -43,7 +45,10 @@ export default function SectionContacto() {
 
   const handleSubmit = () => {
     if (validator.allValid()) {
-      forceUpdate(false);
+      postContacto(visitante, () => {
+        setSubmitDisabled(false);
+        setVisitante(initialVisitante);
+      })
     } else {
       validator.showMessages();
       forceUpdate(true);
@@ -63,16 +68,16 @@ export default function SectionContacto() {
                 <Grid item xs={12} md={6}>
                   <Typography variant="body1"><b>NOMBRE</b></Typography>
                   <TextField
-                    id="nombre"
-                    name="nombre"
+                    id="firstname"
+                    name="firstname"
                     type="text"
                     variant="outlined"
                     fullWidth
                     color="warning"
                     onChange={handleChange}
-                    value={visitante.nombre}
-                    helperText={validator.message('Nombre', visitante.nombre, 'required|alpha_space|min:3|max:40')}
-                    error={!!validator.message('Nombre', visitante.nombre, 'required|alpha_space|min:3|max:40')}
+                    value={visitante.firstname}
+                    helperText={validator.message('Nombre', visitante.firstname, 'required|alpha_space|min:3|max:40')}
+                    error={!!validator.message('Nombre', visitante.firstname, 'required|alpha_space|min:3|max:40')}
                     InputProps={{
                       inputProps: {
                         maxLength: 40,
@@ -84,16 +89,16 @@ export default function SectionContacto() {
                 <Grid item xs={12} md={6}>
                   <Typography variant="body1"><b>APELLIDO</b></Typography>
                   <TextField
-                    id="apellido"
-                    name="apellido"
+                    id="lastname"
+                    name="lastname"
                     type="text"
                     variant="outlined"
                     fullWidth
                     color="warning"
                     onChange={handleChange}
-                    value={visitante.apellido}
-                    helperText={validator.message('Apellido', visitante.apellido, 'required|alpha_space|min:3|max:40')}
-                    error={!!validator.message('Apellido', visitante.apellido, 'required|alpha_space|min:3|max:40')}
+                    value={visitante.lastname}
+                    helperText={validator.message('Apellido', visitante.lastname, 'required|alpha_space|min:3|max:40')}
+                    error={!!validator.message('Apellido', visitante.lastname, 'required|alpha_space|min:3|max:40')}
                     InputProps={{
                       inputProps: {
                         maxLength: 40,
@@ -105,16 +110,16 @@ export default function SectionContacto() {
                 <Grid item xs={12} md={6}>
                   <Typography variant="body1"><b>MAIL</b></Typography>
                   <TextField
-                    id="mail"
-                    name="mail"
-                    type="mail"
+                    id="email"
+                    name="email"
+                    type="email"
                     variant="outlined"
                     fullWidth
                     color="warning"
                     onChange={handleChange}
-                    value={visitante.mail}
-                    helperText={validator.message('Mail', visitante.mail, 'required|email|min:3|max:100')}
-                    error={!!validator.message('Mail', visitante.mail, 'required|email|min:3|max:100')}
+                    value={visitante.email}
+                    helperText={validator.message('Mail', visitante.email, 'required|email|min:3|max:100')}
+                    error={!!validator.message('Mail', visitante.email, 'required|email|min:3|max:100')}
                     InputProps={{
                       inputProps: {
                         maxLength: 100,
@@ -126,16 +131,16 @@ export default function SectionContacto() {
                 <Grid item xs={12} md={6}>
                   <Typography variant="body1"><b>TELÉFONO</b></Typography>
                   <TextField
-                    id="telefono"
-                    name="telefono"
-                    type="numeric"
+                    id="phone"
+                    name="phone"
+                    type="phone"
                     variant="outlined"
                     fullWidth
                     color="warning"
                     onChange={handleChange}
-                    value={visitante.telefono}
-                    helperText={validator.message('Teléfono', visitante.telefono, 'required|phone|min:6|max:16')}
-                    error={!!validator.message('Teléfono', visitante.telefono, 'required|phone|min:6|max:16')}
+                    value={visitante.phone}
+                    helperText={validator.message('Teléfono', visitante.phone, 'required|phone|min:6|max:16')}
+                    error={!!validator.message('Teléfono', visitante.phone, 'required|phone|min:6|max:16')}
                     InputProps={{
                       inputProps: {
                         maxLength: 16,
@@ -145,7 +150,7 @@ export default function SectionContacto() {
                   />
                 </Grid>
                 <Grid item xs={12} md={12} className={classes.justifyContentEnd}>
-                  <Button color="warning" round onClick={handleSubmit}>
+                  <Button color={"warning"} round onClick={handleSubmit} disabled={submitDisabled}>
                     Enviar
                   </Button>
                 </Grid>
