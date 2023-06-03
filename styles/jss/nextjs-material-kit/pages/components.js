@@ -1,17 +1,23 @@
+import { grayColor, primaryColor } from "../../nextjs-material-kit";
 import { container } from "/styles/jss/nextjs-material-kit.js";
 
 const componentsStyle = {
   container,
   brand: {
-    color: "#FFFFFF",
-    textAlign: "left"
+    textAlign: "left",
+    backgroundImage: "url('/img/BRUSH-3 2.png')",
+    backgroundPosition: "right",
+    backgroundPositionX: '-50rem',
+    backgroundPositionY: '30px',
+    backgroundRepeat: 'no-repeat'
   },
   title: {
     fontSize: "4.2rem",
     fontWeight: "600",
-    color: "black",
+    color: grayColor,
     display: "inline-block",
-    position: "relative"
+    position: "relative",
+    marginLeft: '15%'
   },
   subtitle: {
     fontSize: "1.313rem",
@@ -39,6 +45,10 @@ const componentsStyle = {
   },
   textCenter: {
     textAlign: "center"
+  },
+  noSeparation: {
+    padding: '0',
+    margin: '0'
   }
 };
 

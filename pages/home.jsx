@@ -19,6 +19,7 @@ import SectionBasics from "/pages-sections/Home-Sections/SectionBasics.js";
 import SectionTypography from "/pages-sections/Home-Sections/SectionTypography.js";
 
 import styles from "/styles/jss/nextjs-material-kit/pages/components.js";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles(styles);
 
@@ -28,7 +29,6 @@ export default function Components(props) {
   return (
     <div>
       <Header
-        // brand="NextJS Material Kit"
         rightLinks={<HeaderLinks />}
         fixed
         color="transparent"
@@ -39,14 +39,17 @@ export default function Components(props) {
         {...rest}
       />
       <Parallax image="/img/hero.png">
-        <div className={classes.container}>
-          <GridContainer>
+        <div>
+          <Grid container className={classes.noSeparation}>
             <GridItem>
+              <h1 className={classes.title}>Logo</h1>
+            </GridItem>
+            <GridItem className={classes.noSeparation}>
               <div className={classes.brand}>
                 <h1 className={classes.title}>El Secreto <br /> de  tu Cocina</h1>
               </div>
             </GridItem>
-          </GridContainer>
+          </Grid>
         </div>
       </Parallax>
 
