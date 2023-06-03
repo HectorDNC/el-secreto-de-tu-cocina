@@ -1,4 +1,4 @@
-import { infoColor, primaryColor, warningColor } from "../../../nextjs-material-kit";
+import { grayColor, infoColor, primaryColor, warningColor } from "../../../nextjs-material-kit";
 import { container, title } from "/styles/jss/nextjs-material-kit.js";
 import customCheckboxRadioSwitch from "/styles/jss/nextjs-material-kit/customCheckboxRadioSwitch.js";
 
@@ -74,6 +74,15 @@ const basicsStyle = {
         zIndex: "10"
       },
     }
+  },
+  buttonSubmit: {
+    background: warningColor,
+    '&:hover': {
+      background: infoColor,
+    },
+  },
+  buttonSubmitDisabled: {
+    background: `${grayColor} !important`,
   },
   ...customCheckboxRadioSwitch
 };

@@ -152,7 +152,7 @@ export default function SectionContacto() {
                   />
                 </Grid>
                 <Grid item xs={12} md={12} className={classes.justifyContentEnd}>
-                  <Button color={"warning"} round className={classes.buttonSubmit} onClick={handleSubmit} disabled={submitDisabled}>
+                  <Button color={"warning"} round className={!submitDisabled ? classes.buttonSubmit : classes.buttonSubmitDisabled} onClick={handleSubmit} disabled={submitDisabled}>
                     Enviar
                   </Button>
                 </Grid>
