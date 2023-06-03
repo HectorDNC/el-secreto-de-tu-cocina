@@ -8,16 +8,15 @@ export const postContacto = async (data, trigger = null) => {
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then(res => res.json())
-        .catch(error => {
-            console.error('Error:', error);
+    }).then(res => {
+        if (!res.ok) {
+            console.error('Error:', res.statusText);
             alert('Error');
-        })
-        .then(response => {
-            console.log('Success:', response);
-            alert("Enviado correctamente!");
-        });
-
-    if (trigger) trigger();
+            if (trigger) trigger(false);
+            return false;
+        }
+        alert('Enviado');
+        if (trigger) trigger(true);
+    })
 
 }

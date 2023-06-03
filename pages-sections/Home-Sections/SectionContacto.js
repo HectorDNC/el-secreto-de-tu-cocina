@@ -16,10 +16,10 @@ import { postContacto } from "../../actions/contacto.js";
 const useStyles = makeStyles(styles);
 
 const initialVisitante = {
-  nombre: '',
-  apellido: '',
-  mail: '',
-  telefono: ''
+  firstname: '',
+  lastname: '',
+  email: '',
+  phone: ''
 }
 
 export default function SectionContacto() {
@@ -45,9 +45,11 @@ export default function SectionContacto() {
 
   const handleSubmit = () => {
     if (validator.allValid()) {
-      postContacto(visitante, () => {
+      validator.hideMessages();
+      setSubmitDisabled(true);
+      postContacto(visitante, (res) => {
         setSubmitDisabled(false);
-        setVisitante(initialVisitante);
+        if(res) setVisitante(initialVisitante);
       })
     } else {
       validator.showMessages();
@@ -150,7 +152,7 @@ export default function SectionContacto() {
                   />
                 </Grid>
                 <Grid item xs={12} md={12} className={classes.justifyContentEnd}>
-                  <Button color={"warning"} round onClick={handleSubmit} disabled={submitDisabled}>
+                  <Button color={"warning"} round className={classes.buttonSubmit} onClick={handleSubmit} disabled={submitDisabled}>
                     Enviar
                   </Button>
                 </Grid>
