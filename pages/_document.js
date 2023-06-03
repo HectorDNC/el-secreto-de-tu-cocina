@@ -16,6 +16,9 @@ class MyDocument extends Document {
             href="/img/apple-icon.png"
           />
           {/* Fonts and icons */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Open+Sans&display=swap" rel="stylesheet" />
           <link
             rel="stylesheet"
             type="text/css"
@@ -38,7 +41,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </Html>
+      </Html >
     );
   }
 }
